@@ -5,20 +5,20 @@ fun main () {
 
     //sorteia um número alearóriamente
     val secret = Random.nextInt(0,101)
-    //enqaunto o usuário não acertar fica true
-    var playing = true
 
-    while (playing) {
+    //é true enquanto o usuário joga
+    while (true) {
         print("Digite um valor: ")
         val enter = readln().toInt()
 
         when {
             (enter > secret) -> println("O número é menor")
             (enter < secret) -> println("O número é maior")
-            else -> playing = false
-            //se o usuário acertar retorna false e encerra o jogo
-
+            else -> {
+                println("Parabéns você acertou, o número é $secret!")
+                //break faz o loop ser falso e encerrar o jogo
+                break
+            }
         }
     }
-    println("Parabéns você acertou, o número é $secret!")
 }
